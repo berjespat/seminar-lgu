@@ -18,6 +18,7 @@ model Product {
   description String?
   price       Decimal  @db.Decimal(10, 2)
   image       String?
+  image2      String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   reviews     Review[]
