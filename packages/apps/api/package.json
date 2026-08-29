@@ -113,14 +113,28 @@
           "cwd": "{projectRoot}",
           "command": "prisma migrate dev"
         }
+      },
+      "db:generate": {
+        "executor": "nx:run-commands",
+        "options": {
+          "cwd": "{projectRoot}",
+          "command": "prisma generate"
+        }
       }
     }
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1121.0",
+    "@prisma/adapter-pg": "^7.10.0",
     "@prisma/client": "7.10.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "multer": "^2.3.0",
+    "pg": "^8.23.0",
+    "zod": "^4.5.2"
   },
   "devDependencies": {
+    "@types/multer": "^2.2.0",
+    "@types/pg": "^8.20.0",
     "dotenv": "^17.4.2",
     "prisma": "7.10.0"
   }

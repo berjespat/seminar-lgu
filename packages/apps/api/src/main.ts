@@ -1,13 +1,16 @@
 import express from 'express';
+import { productsRouter } from './routes/products.routes';
 
 const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
 
 const app = express();
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send({ message: 'Hello API LGU Koronadals' });
 });
+app.use("/products",productsRouter);
 
 app.listen(port, host, () => {
   console.log(`[ ready ] http://${host}:${port}`);
